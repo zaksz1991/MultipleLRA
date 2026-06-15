@@ -1,31 +1,29 @@
 # Multiple Linear Regression – Multi-Channel Marketing Analysis
 
 ## Objective
-Analyze the impact of marketing channels on Sales using Multiple Linear Regression.
+Predict Sales using multiple marketing channels and evaluate model assumptions.
 
-## Dataset
-marketing_sales_data.csv
+## Data Preparation
+- Checked missing values
+- Applied dropna()
+- Encoded TV categorical variable with dummy variables
 
-## Tools
-- pandas
-- numpy
-- seaborn
-- matplotlib
-- statsmodels
-- scipy
+## Multicollinearity
+VIF values were below 10, indicating no severe multicollinearity.
 
-## Key Findings
+## Model Performance
 - Adjusted R² = 0.903
-- Radio positively impacts Sales.
-- High TV exposure outperforms Medium and Low TV exposure.
-- Social Media was not statistically significant.
-- No severe multicollinearity detected.
+- F-statistic = 1335
+- Model p-value < 0.05
 
-## Installation
+## Regression Equation
+Sales = 218.647 + 2.989(Radio) − 0.150(Social Media) − 154.312(TV_Low) − 75.328(TV_Medium)
 
-pip install pandas numpy matplotlib seaborn statsmodels scipy
+## Assumption Checks
+- Linearity verified using residual plots
+- Independence verified using Durbin-Watson statistic
+- Normality verified using Q-Q plot
+- Homoscedasticity verified using residual analysis
 
-## Files
-- multiple_regression_analysis.ipynb
-- README.md
-- marketing_sales_data.csv
+## Business Recommendation
+Prioritize High TV exposure and Radio advertising. Reassess Social Media spending because it was not statistically significant.
